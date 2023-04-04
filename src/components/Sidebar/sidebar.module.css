@@ -1,0 +1,25 @@
+.sidebar {
+  height: 100vh;
+  background-color: #f9f9f9;
+  width: 15%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* position: fixed; */
+}
+.sidebarOptions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 10px;
+  height: 7%;
+  border-radius: 10px;
+}
+.sidebarOptions:first-child {
+  color: white;
+  background-color: #4e5d78;
+}
