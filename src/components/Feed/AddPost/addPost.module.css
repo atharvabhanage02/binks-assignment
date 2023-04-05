@@ -1,0 +1,40 @@
+.addPostContainer {
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.postInputSection {
+  display: flex;
+  align-items: center;
+}
+.postInput {
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.postButtonSection {
+  display: flex;
+  justify-content: end;
+}
+.postButton {
+  padding: 8px 25px;
+  background-color: #3882ff;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.profileIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}

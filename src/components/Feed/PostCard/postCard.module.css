@@ -1,0 +1,53 @@
+.postCard {
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  margin-top: 1rem;
+}
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: bold;
+}
+.postIcons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 10px 2rem;
+  cursor: pointer;
+  border-top: 1px solid #ebeaea;
+  border-bottom: 1px solid #ebeaea;
+}
+.userAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.commentSection {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.commentInput {
+  background-color: #f9f9f9;
+  border: none;
+  outline: none;
+  width: 78%;
+  padding: 12px;
+  border-radius: 10px;
+}
+.addComment {
+  margin: auto;
+  padding: 7px 10px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  color: #3882ff;
+  border-radius: 5px;
+  background-color: #ebf2ff;
+  cursor: pointer;
+}

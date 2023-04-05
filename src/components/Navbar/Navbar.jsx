@@ -25,7 +25,11 @@ function Navbar() {
       </div>
       <div className={styles.userInfo}>
         <p>Atharva Bhanage</p>
-        <BsFillPersonFill className={styles.profileIcon} />
+        <img
+          src="https://source.unsplash.com/random/20×20"
+          className={styles.profileIcon}
+          alt="Avatar"
+        />
       </div>
     </div>
   );
