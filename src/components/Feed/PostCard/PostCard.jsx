@@ -9,7 +9,6 @@ function PostCard() {
   return (
     <div className={styles.postCard}>
       <div className={styles.postHeader}>
-        {/* <BsPerson /> */}
         <img
           src="https://source.unsplash.com/random/30×30"
           className={styles.userAvatar}
@@ -25,14 +24,11 @@ function PostCard() {
           repellat.
         </p>
       </div>
-      {/* <hr /> */}
       <div className={styles.postIcons}>
         <AiOutlineHeart />
         <FaRegComment />
         <BsBookmark />
-        {/* <FcLike /> */}
       </div>
-      {/* <hr /> */}
       <div className={styles.commentSection}>
         <img
           src="https://source.unsplash.com/random/30×30"

@@ -5,7 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* position: fixed; */
+  position: fixed;
+  top: 69px;
+  background-color: white;
 }
 .sidebarOptions {
   display: flex;

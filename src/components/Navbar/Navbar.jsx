@@ -26,7 +26,7 @@ function Navbar() {
       <div className={styles.userInfo}>
         <p>Atharva Bhanage</p>
         <img
-          src="https://source.unsplash.com/random/20×20"
+          src="./Assets/user_avatar.png"
           className={styles.profileIcon}
           alt="Avatar"
         />

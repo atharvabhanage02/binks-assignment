@@ -5,7 +5,7 @@ function AddPost() {
     <div className={styles.addPostContainer}>
       <div className={styles.postInputSection}>
         <img
-          src="https://source.unsplash.com/random/20×20"
+          src="./Assets/user_avatar.png"
           className={styles.profileIcon}
           alt="Avatar"
         />

@@ -1,8 +1,13 @@
 .nav {
   padding: 6px 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background-color: white;
+  top: 0;
 }
 .logo {
   width: 35px;
@@ -22,7 +27,7 @@
   background-color: white;
   padding: 10px;
   border-radius: 1.56rem;
-  border: 1px solid grey;
+  background-color: #f9f9f9;
   height: 18px;
 }
 .searchBar {
@@ -30,12 +35,14 @@
   outline: none;
   border: none;
   padding-left: 8px;
+  background-color: #f9f9f9;
 }
 .userInfo {
   display: flex;
   align-items: center;
   gap: 1rem;
   font-weight: 500;
+  margin-right: 50px;
 }
 .profileIcon {
   width: 35px;
