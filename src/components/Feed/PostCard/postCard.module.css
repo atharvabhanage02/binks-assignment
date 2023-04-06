@@ -51,3 +51,19 @@
   background-color: #ebf2ff;
   cursor: pointer;
 }
+.postedComment {
+  display: flex;
+  flex-direction: column;
+}
+.commentedUsername {
+  font-weight: bold;
+  margin: 0;
+  margin-top: 1rem;
+}
+.postedCommentBody {
+  font-size: 14px;
+}
+.commentedUserId {
+  margin: 0;
+  font-size: small;
+}

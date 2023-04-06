@@ -13,7 +13,7 @@ function Sidebar() {
       </div>
       <div className={styles.sidebarOptions}>
         <MdOutlinePostAdd />
-        <p>My Posts</p>
+        <p>Bookmark</p>
       </div>
       <div className={styles.sidebarOptions}>
         <BsPerson />

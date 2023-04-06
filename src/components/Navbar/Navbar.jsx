@@ -1,14 +1,12 @@
 import styles from "./navbar.module.css";
 import { BiSearch } from "react-icons/bi";
-import { BsFillPersonFill } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
 
 function Navbar() {
   return (
     <div className={styles.nav}>
       <div className={styles.logoWrapper}>
         <img
-          src="./Assets/social-media-logo.jpg"
+          src="/Assets/social-media-logo.jpg"
           className={styles.logo}
           alt=""
         />
@@ -26,7 +24,7 @@ function Navbar() {
       <div className={styles.userInfo}>
         <p>Atharva Bhanage</p>
         <img
-          src="./Assets/user_avatar.png"
+          src="/Assets/user_avatar.png"
           className={styles.profileIcon}
           alt="Avatar"
         />
