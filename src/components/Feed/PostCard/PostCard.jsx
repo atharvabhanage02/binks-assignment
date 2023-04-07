@@ -24,7 +24,7 @@ function PostCard({ post, comments, showComments }) {
         />
         <p>Virat Kohli</p>
       </div>
-      <div>
+      <div className={styles.pointer}>
         <p>{post.body}</p>
       </div>
       <div className={styles.postIcons}>
