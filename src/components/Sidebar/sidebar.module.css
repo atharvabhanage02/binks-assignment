@@ -20,7 +20,7 @@
   height: 7%;
   border-radius: 10px;
 }
-.sidebarOptions:first-child {
+.activeTab {
   color: white;
   background-color: #4e5d78;
 }

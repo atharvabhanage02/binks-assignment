@@ -4,6 +4,7 @@ import styles from "./allFeedPosts.module.css";
 import { useEffect } from "react";
 import { fetchPosts } from "../../redux/features/postSlice";
 import { fetchComments } from "../../redux/features/commentSlice";
+import { users } from "../../redux/features/users";
 function AllFeedPosts() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
@@ -12,15 +13,19 @@ function AllFeedPosts() {
     dispatch(fetchPosts());
     dispatch(fetchComments());
   }, []);
+  const getUser = (userId) => {
+    return users.find((user) => user.id == userId);
+  };
   return (
     <div className={styles.allPostCards}>
-      {posts.slice(0, 10).map((post) => {
+      {posts.map((post) => {
         return (
           <PostCard
-            key={post.userId}
+            key={post.id}
             post={post}
             comments={comments}
             showComments={false}
+            user={getUser(post.userId)}
           />
         );
       })}

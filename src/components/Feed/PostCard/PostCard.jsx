@@ -1,30 +1,46 @@
 import styles from "./postCard.module.css";
 import { BsPerson, BsBookmark } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { FaRegComment } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { users } from "../../../redux/features/users";
+import { useDispatch } from "react-redux";
+import { deletePost } from "../../../redux/features/postSlice";
+import { useState } from "react";
+import {
+  createComment,
+  deleteComment,
+} from "../../../redux/features/commentSlice";
 
-function PostCard({ post, comments, showComments }) {
+function PostCard({ post, comments, showComments, user, userPost }) {
+  const [commentBody, setCommentBody] = useState("");
   const getUsernameFromEmail = (email) => {
     return email.split("@")[0];
   };
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
-    <div
-      className={styles.postCard}
-      onClick={() => navigate(`/post/${post.id}`)}
-    >
+    <div className={styles.postCard}>
       <div className={styles.postHeader}>
         <img
           src={`https://source.unsplash.com/random/30×${post.userId}`}
           className={styles.userAvatar}
           alt="Avatar"
         />
-        <p>Virat Kohli</p>
+        <p>{user.name}</p>
+        {userPost && (
+          <AiOutlineDelete
+            className={styles.deleteIcon}
+            onClick={() => dispatch(deletePost(post.id))}
+          />
+        )}
       </div>
-      <div className={styles.pointer}>
+      <div
+        className={styles.pointer}
+        onClick={() => navigate(`/post/${post.id}`)}
+      >
         <p>{post.body}</p>
       </div>
       <div className={styles.postIcons}>
@@ -42,14 +58,20 @@ function PostCard({ post, comments, showComments }) {
           type="text"
           className={styles.commentInput}
           placeholder="Write a comment"
+          value={commentBody}
+          onChange={(e) => setCommentBody(e.target.value)}
         />
         <div className={styles.addComment}>
-          <BiSend />
+          <BiSend
+            onClick={() =>
+              dispatch(createComment({ id: post.id, commentBody }))
+            }
+          />
         </div>
       </div>
       <div>
         {showComments &&
-          comments.slice(0, 2).map((comment) => {
+          comments.map((comment) => {
             return (
               <div className={styles.postedComment}>
                 <div>
@@ -61,6 +83,11 @@ function PostCard({ post, comments, showComments }) {
                   </p>
                 </div>
                 <p className={styles.postedCommentBody}>{comment.body}</p>
+                {userPost && (
+                  <AiOutlineDelete
+                    onClick={() => dispatch(deleteComment(comment.id))}
+                  />
+                )}
               </div>
             );
           })}

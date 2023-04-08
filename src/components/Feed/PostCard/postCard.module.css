@@ -11,6 +11,8 @@
   align-items: center;
   gap: 1.5rem;
   font-weight: bold;
+  width: 100%;
+  position: relative;
 }
 .postIcons {
   display: flex;
@@ -69,4 +71,11 @@
 }
 .pointer {
   cursor: pointer;
+}
+.deleteIcon {
+  position: absolute;
+  color: red;
+  justify-self: flex-end;
+  cursor: pointer;
+  right: 0;
 }
