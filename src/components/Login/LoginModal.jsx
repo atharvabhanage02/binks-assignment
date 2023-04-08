@@ -4,6 +4,7 @@ import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { login } from "../../services/login";
+import { googleSignIn } from "../../services/signInWithGoogle";
 
 function LoginModal() {
   const [signUpCredentials, setSignUpCredentials] = useState({
@@ -20,6 +21,14 @@ function LoginModal() {
     } catch (error) {
       setError(error.message);
       console.log(error);
+    }
+  };
+  const handleGoogleSign = async () => {
+    try {
+      await googleSignIn(auth);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
     }
   };
   return (
@@ -62,11 +71,7 @@ function LoginModal() {
           </button>
         </div>
         {error && <p className={styles.error}>{error}</p>}
-        <GoogleButton
-          onClick={() => {
-            console.log("Google button clicked");
-          }}
-        />
+        <GoogleButton onClick={() => handleGoogleSign()} />
         <p>
           Don't have a account ? <Link to="/signup">Signup</Link>
         </p>
