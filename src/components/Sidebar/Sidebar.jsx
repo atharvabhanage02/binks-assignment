@@ -4,10 +4,20 @@ import { BsPerson } from "react-icons/bs";
 import { MdOutlinePostAdd } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { auth } from "../../firebase";
+import { logout } from "../../services/logout";
 function Sidebar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout(auth);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className={styles.sidebar}>
       <div
@@ -37,7 +47,7 @@ function Sidebar() {
         <BsPerson />
         <p>Profile</p>
       </div>
-      <div className={styles.sidebarOptions}>
+      <div className={styles.sidebarOptions} onClick={() => handleLogout()}>
         <FiLogOut />
         <p>Logout</p>
       </div>

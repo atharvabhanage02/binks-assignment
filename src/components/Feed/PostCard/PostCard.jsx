@@ -5,7 +5,6 @@ import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { FaRegComment } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { users } from "../../../redux/features/users";
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../../redux/features/postSlice";
 import { useState } from "react";

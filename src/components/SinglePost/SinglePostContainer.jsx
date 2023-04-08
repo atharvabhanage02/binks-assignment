@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { PostCard } from "../Feed/PostCard/PostCard";
 import styles from "./singlePost.module.css";
-import { useEffect, useState } from "react";
-import { fetchPosts } from "../../redux/features/postSlice";
+import { useEffect } from "react";
 import { fetchComments } from "../../redux/features/commentSlice";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { users } from "../../redux/features/users";
+import { users } from "../../data/users";
 
 function SinglePostContainer() {
   const dispatch = useDispatch();

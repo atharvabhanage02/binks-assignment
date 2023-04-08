@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { PostCard } from "../../Feed/PostCard/PostCard";
-import { users } from "../../../redux/features/users";
+import { users } from "../../../data/users";
 
 function MyPosts() {
   const myPosts = useSelector((state) => state.posts.myPosts);

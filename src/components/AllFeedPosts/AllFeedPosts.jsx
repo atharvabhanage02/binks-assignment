@@ -4,7 +4,7 @@ import styles from "./allFeedPosts.module.css";
 import { useEffect } from "react";
 import { fetchPosts } from "../../redux/features/postSlice";
 import { fetchComments } from "../../redux/features/commentSlice";
-import { users } from "../../redux/features/users";
+import { users } from "../../data/users";
 function AllFeedPosts() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
