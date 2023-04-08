@@ -47,6 +47,7 @@ Start the server
     - Login (With Email and Password)
     - Login (With Google Account)
     - Logout
+    - Protected Routes
 - Profile Page 
     - View one's Posts
     - Edit Post
