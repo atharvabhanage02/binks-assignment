@@ -6,13 +6,13 @@
 }
 .loginModal {
   padding: 3rem 1rem;
-  background-color: white;
+  background-color: var(--white-fff);
   border-radius: 10px;
   width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: #00000059 0px 5px 15px;
 }
 .userLoginCredentials {
   display: flex;
@@ -25,8 +25,8 @@
   padding: 8px;
   font-size: 1.1rem;
   border-radius: 10px;
-  border: 1px solid grey;
-  outline-color: #4285f4;
+  border: 1px solid var(--grey-808);
+  outline-color: var(--blue-428);
 }
 .inputSection {
   display: flex;
@@ -35,7 +35,7 @@
   gap: 5px;
 }
 .inputSection > label {
-  color: black;
+  color: var(--black-000);
   font-size: 1.1rem;
   font-weight: bolder;
 }
@@ -43,16 +43,16 @@
   padding: 10px 1rem;
   border-radius: 10px;
   border: none;
-  background-color: #4285f4;
+  background-color: var(--blue-428);
   margin: 1rem;
   width: 80%;
-  color: white;
+  color: var(--white-fff);
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
 }
 .error {
-  color: red;
+  color: var(--red-ff0);
   font-weight: bold;
   font-size: 1.1rem;
 }

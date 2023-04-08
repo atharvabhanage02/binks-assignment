@@ -1,8 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+:root {
+  --primary-color: #3882ff;
+  --blue-428: #4285f4;
+  --white-fff: #ffffff;
+  --white-ebe: #ebeaea;
+  --white-f4f: #f4f4f4;
+  --grey-808: #808080;
+  --grey-f9f: #f9f9f9;
+  --grey-ebf: #ebf2ff;
+  --grey-efe: #efeeee;
+  --red-ff0: #ff0000;
+  --black-000: #000000;
+  --grey-4e5: #4e5d78;
+}
 .App {
   font-family: "Work Sans", sans-serif;
 }
 body {
-  background-color: #efeeee;
+  background-color: var(--grey-efe);
 }
-

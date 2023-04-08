@@ -14,15 +14,6 @@ function Navbar() {
         />
         <p>GetSocial</p>
       </div>
-      <div className={styles.searchContainer}>
-        <BiSearch />
-        <input
-          type="text"
-          className={styles.searchBar}
-          aria-hidden="true"
-          placeholder="Search"
-        />
-      </div>
       <div className={styles.userInfo}>
         {user && <p>{user.displayName}</p>}
         <img

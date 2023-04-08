@@ -25,7 +25,6 @@ function UserProfileHeader() {
           facere deserunt vero eius ducimus quidem nemo fugit possimus dicta.
           Tempora, natus dolores!
         </p>
-        <button className={styles.editProfileBtn}>Edit Proifile</button>
       </div>
     </div>
   );

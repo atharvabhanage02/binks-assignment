@@ -34,11 +34,32 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/post/:postId" element={<SinglePostPage />} />
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <ProfilePage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/post/:postId"
+          element={
+            <RequireAuth>
+              <SinglePostPage />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/likes" element={<LikedPosts />} />
+        <Route
+          path="/likes"
+          element={
+            <RequireAuth>
+              <LikedPosts />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );

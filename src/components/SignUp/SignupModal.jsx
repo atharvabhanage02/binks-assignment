@@ -5,7 +5,6 @@ import { auth } from "../../firebase";
 import { signup } from "../../services/signup";
 import styles from "../Login/loginModal.module.css";
 import { updateProfile } from "firebase/auth";
-import { createUser } from "../../redux/features/auth";
 function SignupModal() {
   const [signUpCredentials, setSignUpCredentials] = useState({
     name: "",

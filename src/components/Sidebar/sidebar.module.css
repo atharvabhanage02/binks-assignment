@@ -6,8 +6,8 @@
   flex-direction: column;
   gap: 1.5rem;
   position: fixed;
-  top: 69px;
-  background-color: white;
+  top: 4.313rem;
+  background-color: var(--white-fff);
 }
 .sidebarOptions {
   display: flex;
@@ -21,6 +21,6 @@
   border-radius: 10px;
 }
 .activeTab {
-  color: white;
-  background-color: #4e5d78;
+  color: var(--white-fff);
+  background-color: var(--grey-4e5);
 }

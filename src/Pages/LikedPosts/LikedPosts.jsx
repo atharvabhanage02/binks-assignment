@@ -28,6 +28,7 @@ function LikedPosts() {
                 />
               );
             })}
+          {likedPosts.length < 1 && <h1>No Liked Posts</h1>}
         </div>
       </div>
     </div>

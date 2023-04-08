@@ -76,9 +76,10 @@ function PostCard({ post, comments, showComments, user, userPost }) {
         <p>{post.body}</p>
       </div>
       {edit && (
-        <div>
+        <div className={styles.updatePostSection}>
           <input
             type="text"
+            className={styles.updatePostInput}
             value={editedCommentBody}
             onChange={(e) => setEditedCommentBody(e.target.value)}
           />
@@ -89,6 +90,7 @@ function PostCard({ post, comments, showComments, user, userPost }) {
               );
               setEdit(false);
             }}
+            className={styles.updatePostButton}
           >
             Update Post
           </button>
@@ -101,7 +103,6 @@ function PostCard({ post, comments, showComments, user, userPost }) {
           <AiOutlineHeart onClick={() => dispatch(likePost(post))} />
         )}
         <FaRegComment onClick={() => navigate(`/post/${post.id}`)} />
-        <BsBookmark />
       </div>
       <div className={styles.commentSection}>
         <img

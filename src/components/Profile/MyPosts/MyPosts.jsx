@@ -23,6 +23,7 @@ function MyPosts() {
             />
           );
         })}
+      {myPosts.length < 1 && <h1>No Posts to show!</h1>}
     </div>
   );
 }

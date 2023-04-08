@@ -3,7 +3,7 @@
   padding: 1.5rem;
   width: 60%;
   margin: auto;
-  background-color: white;
+  background-color: var(--white-fff);
   margin-top: 1rem;
 }
 .postHeader {
@@ -16,16 +16,16 @@
 }
 .postIcons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 1.2rem;
   padding: 10px 2rem;
   cursor: pointer;
-  border-top: 1px solid #ebeaea;
-  border-bottom: 1px solid #ebeaea;
+  border-top: 1px solid var(--white-ebe);
+  border-bottom: 1px solid var(--white-fff);
 }
 .userAvatar {
-  width: 30px;
-  height: 30px;
+  width: 1.87rem;
+  height: 1.87rem;
   border-radius: 50%;
 }
 .commentSection {
@@ -35,7 +35,7 @@
   align-items: center;
 }
 .commentInput {
-  background-color: #f9f9f9;
+  background-color: var(--grey-f9f);
   border: none;
   outline: none;
   width: 78%;
@@ -48,9 +48,9 @@
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  color: #3882ff;
+  color: var(--primary-color);
   border-radius: 5px;
-  background-color: #ebf2ff;
+  background-color: var(--grey-ebf);
   cursor: pointer;
 }
 .postedComment {
@@ -60,7 +60,7 @@
 }
 .deleteCommentIcon {
   position: absolute;
-  color: red;
+  color: var(--red-ff0);
   justify-self: flex-end;
   cursor: pointer;
   top: 1.7rem;
@@ -83,15 +83,39 @@
 }
 .deleteIcon {
   position: absolute;
-  color: red;
+  color: var(--red-ff0);
   justify-self: flex-end;
   cursor: pointer;
   right: 0;
 }
-.editIcon{
+.editIcon {
   position: absolute;
-  color: grey;
+  color: var(--grey-808);
   justify-content: flex-end;
   right: 2rem;
+  cursor: pointer;
+}
+.updatePostSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+.updatePostInput {
+  padding: 1rem;
+  background-color: var(--grey-f9f);
+  border: none;
+  outline-color: var(--primary-color);
+  border-radius: 10px;
+  width: 65%;
+}
+.updatePostButton {
+  padding: 8px 1.56rem;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-fff);
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-weight: bolder;
   cursor: pointer;
 }
