@@ -5,6 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { login } from "../../services/login";
 import { googleSignIn } from "../../services/signInWithGoogle";
+import { updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+// import { createPost } from "../../redux/features/postSlice";
+import { createUser, getUserDetails } from "../../redux/features/auth";
 
 function LoginModal() {
   const [signUpCredentials, setSignUpCredentials] = useState({
@@ -13,14 +17,19 @@ function LoginModal() {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleLogin = async () => {
     setError("");
     try {
-      await login(auth, signUpCredentials.email, signUpCredentials.password);
+      const res = await login(
+        auth,
+        signUpCredentials.email,
+        signUpCredentials.password
+      );
+      dispatch(createUser(res.user));
       navigate("/");
     } catch (error) {
       setError(error.message);
-      console.log(error);
     }
   };
   const handleGoogleSign = async () => {

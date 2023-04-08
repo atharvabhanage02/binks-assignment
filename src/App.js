@@ -11,6 +11,7 @@ import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
 import { getUserDetails } from "./redux/features/auth";
 import { RequireAuth } from "./components/ProtectedRoute/RequireAuth";
+import { LikedPosts } from "./Pages/LikedPosts/LikedPosts";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App() {
         <Route path="/post/:postId" element={<SinglePostPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/likes" element={<LikedPosts />} />
       </Routes>
     </div>
   );

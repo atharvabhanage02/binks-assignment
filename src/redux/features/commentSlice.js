@@ -22,9 +22,11 @@ const commentSlice = createSlice({
       state.comments.push({
         postId: action.payload.id,
         id: id,
-        email: "Virat@gmail.com",
+        userName: action.payload.name,
+        email: action.payload.email,
         body: action.payload.commentBody,
       });
+      id++;
     },
     deleteComment: (state, action) => {
       state.comments = state.comments.filter(

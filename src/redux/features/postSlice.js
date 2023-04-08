@@ -5,6 +5,7 @@ import { v4 as uuid } from "uuid";
 const initialPostState = {
   posts: [],
   myPosts: [],
+  likedPosts: [],
   loading: false,
 };
 
@@ -25,19 +26,39 @@ const postSlice = createSlice({
         id: id,
         title: "",
         body: action.payload,
-        userId: 10,
+        userId: 11,
       });
       state.myPosts.push({
         id: id,
         title: "",
         body: action.payload,
-        userId: 10,
+        userId: 11,
       });
       id++;
     },
     deletePost: (state, action) => {
       state.posts = state.posts.filter((post) => post.id !== action.payload);
       state.myPosts = state.myPosts.filter(
+        (post) => post.id !== action.payload
+      );
+    },
+    updatePost: (state, action) => {
+      state.posts = state.posts.map((post) =>
+        post.id == action.payload.id
+          ? { ...post, body: action.payload.postBody }
+          : post
+      );
+      state.myPosts = state.myPosts.map((post) =>
+        post.id == action.payload.id
+          ? { ...post, body: action.payload.postBody }
+          : post
+      );
+    },
+    likePost: (state, action) => {
+      state.likedPosts.push(action.payload);
+    },
+    removeLike: (state, action) => {
+      state.likedPosts = state.likedPosts.filter(
         (post) => post.id !== action.payload
       );
     },
@@ -50,4 +71,5 @@ const postSlice = createSlice({
 });
 
 export default postSlice.reducer;
-export const { createPost, deletePost } = postSlice.actions;
+export const { createPost, deletePost, updatePost, likePost, removeLike } =
+  postSlice.actions;

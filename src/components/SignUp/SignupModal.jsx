@@ -4,8 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signup } from "../../services/signup";
 import styles from "../Login/loginModal.module.css";
+import { updateProfile } from "firebase/auth";
+import { createUser } from "../../redux/features/auth";
 function SignupModal() {
   const [signUpCredentials, setSignUpCredentials] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -13,9 +16,19 @@ function SignupModal() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSignUp = async () => {
+    if (!signUpCredentials.name) {
+      return setError("Please Enter Name");
+    }
     setError("");
     try {
-      await signup(auth, signUpCredentials.email, signUpCredentials.password);
+      const res = await signup(
+        auth,
+        signUpCredentials.email,
+        signUpCredentials.password
+      );
+      updateProfile(res.user, {
+        displayName: signUpCredentials.name,
+      });
       navigate("/login");
     } catch (error) {
       setError(error.message);
@@ -27,6 +40,21 @@ function SignupModal() {
       <div className={styles.loginModal}>
         <div className={styles.userLoginCredentials}>
           <h1>SignUp</h1>
+          <div className={styles.inputSection}>
+            <label htmlFor="">Name</label>
+            <input
+              type="text"
+              placeholder="Enter Name"
+              className={styles.credentialsInput}
+              value={signUpCredentials.name}
+              onChange={(e) =>
+                setSignUpCredentials({
+                  ...signUpCredentials,
+                  name: e.target.value,
+                })
+              }
+            />
+          </div>
           <div className={styles.inputSection}>
             <label htmlFor="">Email</label>
             <input

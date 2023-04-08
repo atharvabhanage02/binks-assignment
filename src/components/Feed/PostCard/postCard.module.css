@@ -54,8 +54,17 @@
   cursor: pointer;
 }
 .postedComment {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+.deleteCommentIcon {
+  position: absolute;
+  color: red;
+  justify-self: flex-end;
+  cursor: pointer;
+  top: 1.7rem;
+  right: 0;
 }
 .commentedUsername {
   font-weight: bold;
@@ -78,4 +87,11 @@
   justify-self: flex-end;
   cursor: pointer;
   right: 0;
+}
+.editIcon{
+  position: absolute;
+  color: grey;
+  justify-content: flex-end;
+  right: 2rem;
+  cursor: pointer;
 }

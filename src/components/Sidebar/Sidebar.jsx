@@ -31,12 +31,12 @@ function Sidebar() {
       </div>
       <div
         className={`${styles.sidebarOptions} ${
-          pathname === "/bookmark" ? styles.activeTab : ""
+          pathname === "/likes" ? styles.activeTab : ""
         }`}
-        onClick={() => navigate("/bookmark")}
+        onClick={() => navigate("/likes")}
       >
         <MdOutlinePostAdd />
-        <p>Bookmark</p>
+        <p>Likes</p>
       </div>
       <div
         className={`${styles.sidebarOptions} ${
